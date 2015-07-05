@@ -19,7 +19,7 @@ class ExportTest extends \PHPUnit_Framework_TestCase {
 		$doc = new Document("Document1", $rootTopic, $created);
 
 		$json = (new Exporter())->export($doc);
-		//file_put_contents(__DIR__."/expected.json", $json);
-		$this->assertJsonStringEqualsJsonFile(__DIR__."/expected.json", $json);
+		//file_put_contents(__DIR__."/Fixture/expected.json", $json);
+		$this->assertJsonStringEqualsJsonFile(__DIR__."/Fixture/expected.json", $json);
 	}
 }
