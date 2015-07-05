@@ -9,6 +9,11 @@ class Document {
 	private $_title;
 	private $_created;
 
+	/**
+	 * @param $title Document name (used in some formats)
+	 * @param Topic $rootTopic RootTopic of the document
+	 * @param null $created Creation time
+	 */
 	public function __construct ($title, Topic $rootTopic, $created = null)
 	{
 		$this->_title = $title;
