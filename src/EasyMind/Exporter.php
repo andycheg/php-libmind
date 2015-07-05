@@ -12,14 +12,15 @@ class Exporter {
 	const NOT_DEFINED = "notDefined";
 	const DEFAULT_COLLAPSED = false;
 	const DEFAULT_TYPE = "attached";
+	const BACKGROUND_COLOR = "#FFFFFF";
 
 	public function export(Document $doc)
 	{
 		$jsonDoc = new \stdClass();
 		$jsonDoc->name = $doc->getTitle();
 		$jsonDoc->id = $this->generateId("D", $doc->getCreated());
-		$jsonDoc->theme = "default";
-		$jsonDoc->backgroundColor = "#FFFFFF";
+		$jsonDoc->theme = self::THEME;
+		$jsonDoc->backgroundColor = self::BACKGROUND_COLOR;
 		$jsonDoc->rootTopic = $this->exportTopic($doc->getRootTopic());
 		return json_encode($jsonDoc);
 	}
@@ -79,6 +80,6 @@ class Exporter {
 
 	private function generateId($prefix, $created)
 	{
-		return $prefix.$created."_".mt_rand(100000,999999);
+		return $prefix.$created."_".crc32($created);
 	}
 }

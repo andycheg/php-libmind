@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="tests/bootstrap.php" colors="true" beStrictAboutTestsThatDoNotTestAnything="true">
+    <testsuites>
+        <testsuite name="PHP-LibMind Test Suite">
+            <directory>tests/PhpLibMind</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
