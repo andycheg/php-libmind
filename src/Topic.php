@@ -31,6 +31,10 @@ class Topic {
 	 */
 	private $_subTopics = [];
 
+	/**
+	 * @param $title Topic title
+	 * @param null $created Creation time
+	 */
 	public function __construct($title, $created = null)
 	{
 		$this->_title = $title;
